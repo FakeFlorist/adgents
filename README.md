@@ -1,32 +1,49 @@
 # 🅰️ ADGENTS
 
-> **Ads + Agents** — a bilingual stack of 14 AI subagents that handle the work of an entire marketing & advertising agency, running inside [Claude Code](https://claude.com/code).
+> **Ads + Agents** — an open-source stack of 14 AI subagents that handle the work of an entire marketing & advertising agency, running inside [Claude Code](https://claude.com/code).
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Claude Code](https://img.shields.io/badge/Claude%20Code-compatible-blueviolet)](https://claude.com/code)
-[![Languages](https://img.shields.io/badge/Languages-SK%20%2B%20EN-blue)]()
+[![Languages](https://img.shields.io/badge/Languages-EN%20%2B%20SK-blue)]()
 [![Agents](https://img.shields.io/badge/Agents-14-orange)]()
 
 ---
 
-## What is this? / O čo ide?
+## What is this?
 
-🇬🇧 **English**
-You install one folder. From that moment, when you type any marketing or advertising task into Claude Code — *"write 3 headlines for our new coffee brand"*, *"audit competitor ads for these 3 wine labels"*, *"plan a 10k€ Meta + Google budget for product launch"* — the system **automatically** routes the task to the right specialist agent. No commands to remember. No prompt engineering. Just describe what you need.
+You install one folder. From that moment, when you type any marketing or advertising task into Claude Code — *"write 3 headlines for our new coffee brand"*, *"audit competitor ads for these 3 wine labels"*, *"plan a 10k€ Meta + Google budget for product launch"* — the system **automatically** routes the task to the right specialist agent.
+
+No commands to remember. No prompt engineering. No agent names to type. Just describe what you need.
 
 Behind the scenes, 14 role-specific agents — copywriter, art director, media buyer, data analyst, project manager, and 9 more — pick up tasks that match their description, optionally invoke proven methodology **Skills** (e.g. `copywriting`, `paid-ads`, `creative-director`), and return agency-grade output.
 
-🇸🇰 **Slovenčina**
-Nainštaluješ si jeden priečinok. Od tej chvíle, keď v Claude Code napíšeš akúkoľvek marketingovú alebo reklamnú úlohu — *„napíš 3 headliny pre novú kávovú značku"*, *„sprav konkurenčnú analýzu pre 3 značky vína"*, *„naplánuj 10k€ Meta + Google budget na launch"* — systém **automaticky** úlohu pošle správnemu špecialistovi. Žiadne príkazy na zapamätanie. Žiadny prompt engineering. Stačí povedať, čo potrebuješ.
+---
 
-Na pozadí 14 agentov so špecifickými rolami — copywriter, art director, media buyer, dátový analytik, project manager a ďalších 9 — vyberajú úlohy, ktoré matchujú ich popisu, voliteľne volajú overené **Skills** s metodikami (napr. `copywriting`, `paid-ads`, `creative-director`) a vracajú výstup na úrovni dobrej agentúry.
+## Why this exists
+
+A skill is a **methodology**. An agent is a **specialist** who knows how to orchestrate methodologies.
+
+- The `copywriting` skill writes a claim. The `adgent-copywriter` gives you 4 variants (safe / favorite / wildcard / length), explains *why* each one works, and hands the result to the proofreader.
+- You don't need to remember which of 30+ skills to invoke. The agent decides based on your task description.
+- The `adgent-idea-maker` calls methodologies like SIT, TRIZ, and Lateral Thinking. The `adgent-media-buyer` knows the quirks of Meta, Google, TikTok, LinkedIn. Each agent knows who to delegate to next.
+- Parallelism for free: `market-researcher` and `idea-maker` run simultaneously. You get a consolidated output in one pass, not five sequential prompts.
+- Bilingual EN + SK by default. Output is written natively in the target language, not translated.
+
+ADGENTS turns a pile of skills into a team.
 
 ---
 
 ## 🚀 Quick install
 
+One-liner:
+
 ```bash
-# Clone agents into Claude Code's global agents directory
+curl -fsSL https://raw.githubusercontent.com/FakeFlorist/adgents/main/install.sh | bash
+```
+
+Or manual:
+
+```bash
 mkdir -p ~/.claude/agents
 git clone https://github.com/FakeFlorist/adgents.git /tmp/adgents
 cp /tmp/adgents/agents/adgent-*.md ~/.claude/agents/
@@ -34,17 +51,11 @@ cp /tmp/adgents/ADGENTS.md ~/.claude/agents/
 rm -rf /tmp/adgents
 ```
 
-Or one-liner:
-
-```bash
-curl -fsSL https://raw.githubusercontent.com/FakeFlorist/adgents/main/install.sh | bash
-```
-
-**That's it.** Open Claude Code in any project and start typing what you need.
+That's it. Open Claude Code in any project and start typing what you need.
 
 ---
 
-## 🎯 The 14 agents / 14 agentov
+## 🎯 The 14 agents
 
 ### Creative & Strategy
 | Agent | Role | Triggers when you ask for… |
@@ -73,18 +84,18 @@ curl -fsSL https://raw.githubusercontent.com/FakeFlorist/adgents/main/install.sh
 | Agent | Role | Triggers when you ask for… |
 |---|---|---|
 | `adgent-data-analyst` | Reporting Specialist | Client dashboards, performance reports, A/B test analysis |
-| `adgent-market-researcher` | Market Researcher | Competitor analysis, personas, trend analysis, ad library scrape |
+| `adgent-market-researcher` | Market Researcher | Competitor analysis, personas, trend analysis, ad library scraping |
 | `adgent-project-manager` | Project Manager | Work breakdowns, deadlines, meeting minutes, status updates |
 
 ---
 
-## 💬 How you actually use it / Ako to reálne používaš
+## 💬 How you actually use it
 
 Just type your task into Claude Code. Don't think about which agent to call.
 
 ```
-"Vymysli 5 kampaňových konceptov pre novú značku kávy,
-audience 25–40, premium, launch leto 2026, 50k€, IG + OOH + radio"
+"Generate 5 campaign concepts for a new coffee brand, audience 25–40,
+premium, summer 2026 launch, 50k€ budget, IG + OOH + radio"
 ```
 → Claude automatically dispatches `adgent-market-researcher` + `adgent-idea-maker` in parallel.
 
@@ -95,8 +106,8 @@ target: hikers, premium price, technical fabric story"
 → Auto-routes to `adgent-copywriter`.
 
 ```
-"Audit competitor ads from Meta Ad Library for Patagonia, Fjällräven, Arc'teryx —
-what's working, what gaps could we own?"
+"Audit competitor ads from Meta Ad Library for Patagonia, Fjällräven,
+Arc'teryx — what's working, what gaps could we own?"
 ```
 → Auto-routes to `adgent-market-researcher` (which invokes the `competitive-ads-extractor` skill).
 
@@ -108,11 +119,11 @@ campaign structure, audience strategy, and what to test in the first 14 days."
 
 ---
 
-## 🧠 How it works / Ako to funguje
+## 🧠 How it works
 
 ```
 ┌──────────────────────────────────────────────────────────────┐
-│   YOU type a task in plain Slovak or English                 │
+│   YOU type a task in plain language                          │
 └──────────────────────────────────────────────────────────────┘
                           ↓
 ┌──────────────────────────────────────────────────────────────┐
@@ -134,7 +145,7 @@ campaign structure, audience strategy, and what to test in the first 14 days."
 ```
 
 Each `adgent-*.md` file is a markdown system prompt with:
-- A **description** that triggers auto-routing (in both Slovak and English keywords)
+- A **description** that triggers auto-routing (in both English and Slovak keywords)
 - **Skills to invoke** — which methodology skills to load before working
 - **Working principles** — domain rules the agent follows
 - **Hand-offs** — which other adgents to delegate to
@@ -145,17 +156,16 @@ Edit any file → change takes effect in the next conversation.
 
 ## 🛠 Recommended Skills
 
-ADGENTS works on its own, but a few of the agents are designed to invoke methodology **Skills** for higher-quality output. If you have these installed in `~/.claude/skills/`, the relevant agents will use them automatically:
+ADGENTS works on its own — every agent has methodology baked into its system prompt. But when **Skills** are installed in `~/.claude/skills/`, the relevant agents invoke them automatically for higher-quality output.
 
 | Skill | Used by | Why |
 |---|---|---|
 | `copywriting` | copywriter, content-creator | Cannes-grade copy methodology |
-| `creative-director` | idea-maker | SIT/TRIZ/lateral thinking + recursive self-scoring |
+| `creative-director` | idea-maker | SIT / TRIZ / lateral thinking + recursive self-scoring |
 | `paid-ads` | media-buyer | Campaign strategy framework |
 | `content-strategy` | seo-content, idea-maker | Topic clusters, pillars |
 | `content-research-writer` | content-creator, seo-content | Research + citations + hooks |
 | `competitive-ads-extractor` | market-researcher, media-buyer | Ad library analysis |
-| `creative-director` | — | (Get it: see Anthropic skills repo or community sources) |
 
 Skills are out of scope for this repo — install separately. ADGENTS gracefully falls back to in-prompt principles if a skill isn't available.
 
@@ -163,9 +173,9 @@ Skills are out of scope for this repo — install separately. ADGENTS gracefully
 
 ## 🌐 Bilingual
 
-- Talk to the agents in Slovak or English — they reply in your language.
+- Talk to the agents in English or Slovak — they reply in your language.
 - **Final outputs** (copy, posts, reports) are written *natively* in the language you request, not translated.
-- Supported well: SK, EN, CZ, HU, PL, DE. Other languages will flag for native speaker review.
+- Supported well: EN, SK, CZ, HU, PL, DE. Other languages will flag for native speaker review.
 
 ---
 
@@ -190,7 +200,7 @@ Skills are out of scope for this repo — install separately. ADGENTS gracefully
 └── adgent-project-manager.md
 ```
 
-Globally available across all Claude Code projects.
+Globally available across all your Claude Code projects.
 
 ---
 
@@ -210,15 +220,26 @@ Each file is plain markdown. Open, edit, save. Done.
 ## 📚 Documentation
 
 - [`ADGENTS.md`](./ADGENTS.md) — full reference with workflows and skill mapping
-- [`docs/workflows.md`](./docs/workflows.md) — typical end-to-end workflows (campaign launch, social sprint, performance, SEO engine, pitch)
+- [`docs/workflows.md`](./docs/workflows.md) — end-to-end workflows (campaign launch, social sprint, performance, SEO engine, pitch, crisis)
 - [`docs/skills.md`](./docs/skills.md) — which skills each agent uses and why
+
+---
+
+## 👥 Who this is for
+
+- **Solopreneurs** paying for 5 freelancers every month
+- **Marketing managers** at small companies without an agency budget
+- **Agencies** wanting 5× throughput at the same quality bar
+- **Consultants** who don't want to learn 14 different tools
+
+This isn't *"AI will replace people."* It's a team in one window.
 
 ---
 
 ## 🤝 Contributing
 
 Pull requests welcome — especially:
-- New roles missing from current set (PR, influencer marketing, email marketing, CRO, video shoot producer…)
+- New roles missing from the current set (PR, influencer marketing, email marketing, CRO, video shoot producer…)
 - Translations / localization to other languages
 - Industry-specific variants (e-com pack, B2B SaaS pack, healthcare pack…)
 - Workflow recipes
@@ -234,7 +255,6 @@ MIT — use it, fork it, sell agency services with it, attribute if you feel lik
 ## 🙏 Credits
 
 - Inspired by [`gstack`](https://github.com/garrytan/gstack) by Garry Tan — same idea, ported from software engineering to advertising.
-- The `creative-director` skill referenced here is by a third party — install separately.
 - Built with [Claude Code](https://claude.com/code).
 
 ---
