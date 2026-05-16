@@ -252,11 +252,4 @@ MIT — use it, fork it, sell agency services with it, attribute if you feel lik
 
 ---
 
-## 🙏 Credits
-
-- Inspired by [`gstack`](https://github.com/garrytan/gstack) by Garry Tan — same idea, ported from software engineering to advertising.
-- Built with [Claude Code](https://claude.com/code).
-
----
-
 **Built for agencies that ship.** Open Claude Code. Type what you need. Watch a team work.
