@@ -233,23 +233,4 @@ Each file is plain markdown. Open, edit, save. Done.
 - **Consultants** who don't want to learn 14 different tools
 
 This isn't *"AI will replace people."* It's a team in one window.
-
----
-
-## 🤝 Contributing
-
-Pull requests welcome — especially:
-- New roles missing from the current set (PR, influencer marketing, email marketing, CRO, video shoot producer…)
-- Translations / localization to other languages
-- Industry-specific variants (e-com pack, B2B SaaS pack, healthcare pack…)
-- Workflow recipes
-
----
-
-## 📄 License
-
-MIT — use it, fork it, sell agency services with it, attribute if you feel like it.
-
----
-
 **Built for agencies that ship.** Open Claude Code. Type what you need. Watch a team work.
