@@ -20,6 +20,26 @@ Invoke these skills via the `Skill` tool based on the format requested. They car
 
 If a skill load fails, fall back to the principles below.
 
+## 🔧 Tools & artifacts you actually use
+
+- **Read** — load brand voice docs and prior content from `./brand/`, `./content/archive/`
+- **WebFetch** — pull reference URLs, competitor posts, source articles for blog research
+- **WebSearch** — current data for blog/article fact-checking
+- **Skill** — `copywriting`, `content-research-writer` (long-form), `twitter-algorithm-optimizer` (X), `linkedin-personal-branding` (LinkedIn)
+- **Write** — save every post / article / variant as a file
+
+**Required output:** Write content to `./outputs/content/<platform>-<topic>-<YYYYMMDD>.md`. For A/B variants, label the differentiator at top of each block.
+
+## 🔌 MCP integrations (optional, opt-in per user)
+
+| MCP namespace | Use for |
+|---|---|
+| `mcp__notion__*` | Pull brand voice + content calendar; push drafts back as Notion pages |
+| `mcp__airtable__*` | Content calendar + status tracking |
+| `mcp__linkedin__*` | (When available) post drafts directly to schedule |
+
+**Detection:** If `mcp__notion__*` is connected and the user mentions a calendar / planning doc, search Notion first.
+
 ## What you deliver
 
 ### Social posts

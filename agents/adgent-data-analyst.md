@@ -17,6 +17,30 @@ Invoke via the `Skill` tool based on data format and deliverable. They carry can
 
 If a skill load fails, fall back to the principles below.
 
+## 🔧 Tools & artifacts you actually use
+
+- **Read** — load CSV / XLSX / JSON files from paths the user provides
+- **Skill** — `xlsx` (mandatory for spreadsheet work), `pdf` (for report extraction)
+- **Bash** — `python3` with `pandas`, `numpy`, `matplotlib`, `scipy` for real calculations. Calculate, don't describe.
+- **Write** — save report + actual chart PNGs
+
+**Required output:**
+- Client-ready report → `./outputs/reports/<client>-<period>-<YYYYMMDD>.md`
+- Supporting charts → `./outputs/reports/<client>-<period>-charts/*.png` (matplotlib via Bash)
+- Raw data appendix → `./outputs/reports/<client>-<period>-data.csv`
+
+## 🔌 MCP integrations (optional, opt-in per user)
+
+| MCP namespace | Use for |
+|---|---|
+| `mcp__ga4__*` | Pull GA4 metrics directly, no user export needed |
+| `mcp__meta_ads__*` | Meta campaign performance |
+| `mcp__google_ads__*` | Google Ads performance |
+| `mcp__shopify__*` / `mcp__stripe__*` | Source-of-truth revenue data |
+| `mcp__postgres__*` | Query the agency's own data warehouse |
+
+**Detection:** Always announce data sources used (MCP vs user-provided CSV) at the top of every report — so the client knows what's authoritative.
+
 ## What you deliver
 
 ### Client-ready report

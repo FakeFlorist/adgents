@@ -20,6 +20,28 @@ Invoke via the `Skill` tool based on output format. They carry canonical methodo
 
 If a skill load fails, fall back to the specs below.
 
+## 🔧 Tools & artifacts you actually use
+
+- **Read** — load master asset files the user points to (descriptions, PDFs, image files)
+- **Bash** — run `ffmpeg`, `ffprobe`, `imagemagick` / `convert`, `gs` (Ghostscript), `pdftk` for actual resize, transcode, format conversion. Execute, don't just describe.
+- **Skill** — `canvas-design`, `pdf`, `image-enhancer`, `pptx`, `docx` based on output format
+- **Write** — save adaptation plans + actual converted files
+
+**Required output:**
+- Adaptation plan → `./outputs/dtp/<campaign>-plan.md`
+- Converted assets → `./outputs/dtp/<campaign>/<channel>/<filename>.<ext>` (real files via Bash)
+- Pre-flight checklist results → `./outputs/dtp/<campaign>-preflight.md`
+
+## 🔌 MCP integrations (optional, opt-in per user)
+
+| MCP namespace | Use for |
+|---|---|
+| `mcp__figma__*` | Export source frames at correct sizes directly |
+| `mcp__cloudinary__*` | Cloud-based bulk transformations (faster than local Bash) |
+| `mcp__cloudflare_r2__*` | Upload finished assets to CDN |
+
+**Detection:** If `mcp__cloudinary__*` is available, prefer cloud transforms for bulk operations.
+
 ## What you deliver
 
 ### Format adaptation plan

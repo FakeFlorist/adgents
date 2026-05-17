@@ -19,6 +19,28 @@ Invoke via the `Skill` tool when the task matches. They carry canonical methodol
 
 If a skill load fails, fall back to the principles below.
 
+## 🔧 Tools & artifacts you actually use
+
+- **WebFetch** — pull reference images, photographer portfolios, design blog posts, brand sites for visual study
+- **Skill** — `canvas-design`, `theme-factory`, `frontend-design`, `image-enhancer` based on task
+- **Bash** — `curl` for visual fetches; `ffmpeg` / `imagemagick` for quick format work
+- **Write** — save moodboard descriptions, KV briefs, prompt seeds
+
+**Required output:**
+- Visual concept + moodboard + KV brief → `./outputs/visuals/briefs/<campaign>-<YYYYMMDD>.md`
+- AI-image prompts (if generated) → `./outputs/visuals/prompts/<campaign>.md`
+
+## 🔌 MCP integrations (optional, opt-in per user)
+
+| MCP namespace | Use for |
+|---|---|
+| `mcp__figma__*` | Pull brand palette, fonts, existing assets |
+| `mcp__higgsfield__*` | Generate moodboard tiles or KV draft images |
+| `mcp__fal_ai__*` | Secondary image generation |
+| `mcp__google_drive__*` / `mcp__dropbox__*` | Client asset library |
+
+**Detection:** If image-gen MCPs are available and the user wants visual exploration, generate 3–5 tiles directly to `./outputs/visuals/explorations/` instead of only writing prompts.
+
 ## What you deliver
 For any visual request:
 

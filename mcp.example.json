@@ -1,0 +1,106 @@
+{
+  "$schema": "https://example.com/claude-mcp-config.schema.json",
+  "_README": [
+    "Workhugs Adgents — example MCP configuration",
+    "",
+    "Copy this file to ~/.claude/mcp.json and uncomment only the servers you want to wire up.",
+    "Each server requires credentials in environment variables — see docs/mcp-setup.md.",
+    "",
+    "After saving, restart Claude Code. The agents will detect available MCP tools automatically",
+    "and prefer them over public WebFetch / scraping."
+  ],
+
+  "mcpServers": {
+
+    "_slack": {
+      "_note": "Slack — for adgent-community-manager (escalations) and adgent-project-manager (status)",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-slack"],
+      "env": {
+        "SLACK_BOT_TOKEN": "xoxb-…",
+        "SLACK_TEAM_ID": "T0…"
+      }
+    },
+
+    "_notion": {
+      "_note": "Notion — for adgent-copywriter (brand voice), adgent-content-creator (calendar), adgent-project-manager (docs)",
+      "command": "npx",
+      "args": ["-y", "@notionhq/notion-mcp-server"],
+      "env": {
+        "OPENAPI_MCP_HEADERS": "{\"Authorization\": \"Bearer secret_…\", \"Notion-Version\": \"2022-06-28\"}"
+      }
+    },
+
+    "_linear": {
+      "_note": "Linear — for adgent-project-manager (tasks). Replace _linear with linear when ready.",
+      "command": "npx",
+      "args": ["-y", "@tacticlaunch/mcp-linear"],
+      "env": {
+        "LINEAR_API_KEY": "lin_api_…"
+      }
+    },
+
+    "_figma": {
+      "_note": "Figma — for adgent-art-director (brand kit), adgent-copywriter (visual context), adgent-dtp-operator (export sizes)",
+      "command": "npx",
+      "args": ["-y", "figma-developer-mcp"],
+      "env": {
+        "FIGMA_API_KEY": "figd_…"
+      }
+    },
+
+    "_postgres": {
+      "_note": "Postgres — for adgent-data-analyst (data warehouse queries)",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-postgres", "postgresql://user:pass@host/db"]
+    },
+
+    "_google_drive": {
+      "_note": "Google Drive — for adgent-art-director, adgent-copywriter, adgent-project-manager (client folders)",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-gdrive"],
+      "env": {
+        "GDRIVE_CREDENTIALS": "/path/to/gcp-credentials.json"
+      }
+    },
+
+    "_meta_ads_library": {
+      "_note": "Meta Ad Library — for adgent-market-researcher and adgent-media-buyer (competitor ad analysis). Requires custom MCP — see docs/mcp-setup.md for build instructions.",
+      "command": "node",
+      "args": ["/path/to/your/custom-mcp/meta-ads-library/dist/index.js"],
+      "env": {
+        "META_APP_ID": "…",
+        "META_APP_SECRET": "…",
+        "META_ACCESS_TOKEN": "…"
+      }
+    },
+
+    "_ga4": {
+      "_note": "GA4 Data API — for adgent-data-analyst (read-only metrics). Requires custom MCP — see docs/mcp-setup.md.",
+      "command": "node",
+      "args": ["/path/to/your/custom-mcp/ga4/dist/index.js"],
+      "env": {
+        "GOOGLE_APPLICATION_CREDENTIALS": "/path/to/service-account.json",
+        "GA4_PROPERTY_ID": "properties/…"
+      }
+    },
+
+    "_higgsfield": {
+      "_note": "Higgsfield API — for adgent-art-director, adgent-ai-prompter (image gen). Custom MCP.",
+      "command": "node",
+      "args": ["/path/to/your/custom-mcp/higgsfield/dist/index.js"],
+      "env": {
+        "HIGGSFIELD_API_KEY": "…"
+      }
+    },
+
+    "_brand_monitoring": {
+      "_note": "Brand24 or Mention API — for adgent-community-manager and adgent-market-researcher. Custom MCP.",
+      "command": "node",
+      "args": ["/path/to/your/custom-mcp/brand-monitoring/dist/index.js"],
+      "env": {
+        "BRAND24_API_KEY": "…"
+      }
+    }
+  }
+}

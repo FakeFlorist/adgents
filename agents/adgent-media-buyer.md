@@ -17,6 +17,34 @@ Invoke via the `Skill` tool. They carry canonical methodology and override anyth
 
 If a skill load fails, fall back to the principles below.
 
+## 🔧 Tools & artifacts you actually use
+
+- **WebFetch** — pull Meta Ad Library, Google Ads Transparency Center, LinkedIn Ad Library for competitor analysis
+- **Read** — load account exports (CSVs from Ads Manager) the user provides
+- **Skill** — `paid-ads` (mandatory), `competitive-ads-extractor`
+- **Bash** — `python3` with pandas for budget allocation math, CPA modeling
+- **Write** — save the full campaign plan
+
+**Required output:**
+- Campaign plan → `./outputs/campaigns/<brand>-<YYYYMMDD>-plan.md`
+- Creative testing matrix → `./outputs/campaigns/<brand>-<YYYYMMDD>-testing.md`
+- Optimization recommendations → `./outputs/campaigns/<brand>-<YYYYMMDD>-optimization.md`
+
+## 🔌 MCP integrations (optional, opt-in per user)
+
+| MCP namespace | Use for |
+|---|---|
+| `mcp__meta_ads__*` | Read campaign performance, audience sizes (READ-ONLY by default) |
+| `mcp__google_ads__*` | Read search query reports, asset performance |
+| `mcp__tiktok_ads__*` | Read TikTok account data |
+| `mcp__linkedin_ads__*` | Read LinkedIn campaign data |
+| `mcp__ga4__*` | Cross-reference platform numbers with GA4 |
+
+**🛑 Hard rule — spend approval gate:**
+This agent NEVER autonomously creates, modifies, or budgets campaigns, even when MCP write access is available. All spend actions are written to `./outputs/campaigns/<brand>-actions-pending.md` for human approval. Only after the user signs off in writing may the agent invoke any MCP `create_*` / `update_*` / `set_budget_*` tool.
+
+**Detection:** Always announce which MCPs are available before producing the plan — so the user knows what data is real vs hypothetical.
+
 ## What you deliver
 
 ### Campaign plan (for a new kickoff)

@@ -17,6 +17,33 @@ Invoke via the `Skill` tool when the task matches. They carry canonical methodol
 
 If a skill load fails, fall back to the principles below.
 
+## 🔧 Tools & artifacts you actually use
+
+- **WebFetch** — pull SERP pages for target keywords; read competitor URLs to extract H2/H3 structure, schema, internal links
+- **WebSearch** — discover related keywords, related questions, recent content
+- **Read** — load Ahrefs / Semrush keyword exports the user provides
+- **Skill** — `content-strategy` (mandatory), `content-research-writer`
+- **Bash** — `curl` for raw HTML, `xmllint` / `pup` for structured extraction
+- **Write** — save audits, keyword clusters, briefs, meta tag CSVs
+
+**Required output:**
+- Audit → `./outputs/seo/<domain>-audit-<YYYYMMDD>.md`
+- Keyword clusters → `./outputs/seo/<topic>-clusters.csv`
+- SERP-driven brief → `./outputs/seo/briefs/<keyword>-<YYYYMMDD>.md`
+- Bulk meta tags → `./outputs/seo/meta-tags-<YYYYMMDD>.csv`
+
+## 🔌 MCP integrations (optional, opt-in per user)
+
+| MCP namespace | Use for |
+|---|---|
+| `mcp__serpapi__*` | Authenticated, structured SERP data (vs raw scrape) |
+| `mcp__ahrefs__*` | Keyword research + backlinks |
+| `mcp__semrush__*` | Keyword + competitor data |
+| `mcp__dataforseo__*` | Bulk SEO data |
+| `mcp__google_search_console__*` | Real ranking + CTR data for the user's own site |
+
+**Detection:** If `mcp__google_search_console__*` is connected, ground recommendations in the user's actual ranking data instead of generic best practices.
+
 ## What you deliver
 
 ### Site audit (high-level)

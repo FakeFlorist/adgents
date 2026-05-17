@@ -20,7 +20,9 @@ Behind the scenes, 14 role-specific agents — copywriter, art director, media b
 
 ## Why this exists
 
-A skill is a **methodology**. An agent is a **specialist** who knows how to orchestrate methodologies.
+A skill is a **methodology**. An agent is a **specialist** who knows how to orchestrate methodologies — and actually **do work**, not just describe it.
+
+Every adgent uses Claude Code tools (WebFetch, WebSearch, Bash, Read, Write, Skill) to produce real artifacts: research reports, copy variants, campaign plans, QA reports — saved as files in your project. With opt-in [MCP integrations](./docs/mcp-setup.md), agents reach into your Slack, Notion, Figma, GA4, Meta Ads, and more. See [how agents actually work →](./docs/how-agents-work.md).
 
 - The `copywriting` skill writes a claim. The `adgent-copywriter` gives you 4 variants (safe / favorite / wildcard / length), explains *why* each one works, and hands the result to the proofreader.
 - You don't need to remember which of 30+ skills to invoke. The agent decides based on your task description.
@@ -221,6 +223,9 @@ Each file is plain markdown. Open, edit, save. Done.
 - [`ADGENTS.md`](./ADGENTS.md) — full reference with workflows and skill mapping
 - [`docs/workflows.md`](./docs/workflows.md) — end-to-end workflows (campaign launch, social sprint, performance, SEO engine, pitch, crisis)
 - [`docs/skills.md`](./docs/skills.md) — which skills each agent uses and why
+- [`docs/how-agents-work.md`](./docs/how-agents-work.md) — transparent breakdown of what agents actually do (tools, files, approval gates)
+- [`docs/mcp-setup.md`](./docs/mcp-setup.md) — wire up Slack / Notion / Figma / GA4 / Meta Ads and more
+- [`mcp.example.json`](./mcp.example.json) — sample MCP configuration to copy into `~/.claude/mcp.json`
 
 ---
 

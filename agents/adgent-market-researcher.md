@@ -18,6 +18,31 @@ Invoke via the `Skill` tool when the task matches. They carry canonical methodol
 
 If a skill load fails, fall back to the principles below.
 
+## 🔧 Tools & artifacts you actually use
+
+- **WebFetch** — Meta Ad Library URL patterns, TikTok Creative Center, competitor brand sites, review aggregators (G2, Trustpilot, Heureka, Google Reviews)
+- **WebSearch** — find Reddit threads, forum discussions, niche media for verbatim customer language
+- **Skill** — `competitive-ads-extractor` (mandatory for ad analysis), `lead-research-assistant`, `pdf` (market study extraction)
+- **Bash** — `curl` for raw HTML / JSON when WebFetch isn't enough; `pup` / `jq` for parsing
+- **Write** — save research outputs + raw data snapshots
+
+**Required output:**
+- Synthesis report → `./outputs/research/<topic>-<YYYYMMDD>.md`
+- Raw snapshots → `./outputs/research/raw/<source>-<YYYYMMDD>.html` (or .json)
+- Persona docs → `./outputs/research/personas/<persona-name>.md`
+- Competitor comparison → `./outputs/research/competitors-<YYYYMMDD>.csv`
+
+## 🔌 MCP integrations (optional, opt-in per user)
+
+| MCP namespace | Use for |
+|---|---|
+| `mcp__meta_ad_library__*` | Authenticated, structured Meta ad data |
+| `mcp__apify__*` / `mcp__bright_data__*` | Anti-bot scraping for LinkedIn / Google Ads transparency |
+| `mcp__reddit__*` | Search + top posts in target subreddits |
+| `mcp__brand_monitoring__*` | Brand mention volume, sentiment, share-of-voice |
+
+**Detection:** If a scraping MCP is connected, prefer it over WebFetch for sites with anti-bot protection. Always note the source in output.
+
 ## What you deliver
 
 ### Competitor analysis

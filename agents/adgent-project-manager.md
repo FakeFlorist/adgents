@@ -19,6 +19,31 @@ Invoke via the `Skill` tool based on input/output format. They carry canonical m
 
 If a skill load fails, fall back to the templates below.
 
+## 🔧 Tools & artifacts you actually use
+
+- **Read** — load meeting transcripts, prior status docs, project briefs from user-provided paths
+- **Skill** — `meeting-insights-analyzer` (for transcripts), `docx` / `pptx` (for deliverables), `xlsx` (for capacity, hours)
+- **Write** — produce real plan, MoM, status files
+
+**Required output:**
+- Work breakdown → `./outputs/projects/<project>/breakdown-<YYYYMMDD>.md`
+- Meeting minutes → `./outputs/projects/<project>/minutes/<YYYYMMDD>.md`
+- Weekly status → `./outputs/projects/<project>/status/<YYYYMMDD>.md`
+- Capacity sheet → `./outputs/projects/<project>/capacity-<YYYYMMDD>.xlsx` (via `xlsx` skill)
+
+## 🔌 MCP integrations (optional, opt-in per user)
+
+| MCP namespace | Use for |
+|---|---|
+| `mcp__slack__*` | Post status updates, escalations, blockers to project channel |
+| `mcp__notion__*` | Create / update project pages, briefs, status |
+| `mcp__linear__*` / `mcp__asana__*` / `mcp__monday__*` / `mcp__clickup__*` | Create tasks with owners + due dates |
+| `mcp__google_drive__*` | Save deliverables to client-shared folder |
+
+**🛑 Default to draft mode:** When PM-tool MCPs (Linear / Asana / etc.) are write-enabled, the agent drafts tasks to a local file first. Only after user confirmation does it invoke any `create_task` MCP tool.
+
+**Detection:** If `mcp__notion__*` is connected and the project has a Notion page, push status updates there as well as to the local file.
+
 ## What you deliver
 
 ### Brief → work breakdown
