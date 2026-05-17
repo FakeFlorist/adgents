@@ -305,7 +305,6 @@ Existing or planned MCPs that complement Workhugs Adgents:
 
 | MCP | Purpose |
 |---|---|
-| `jarvis` | Knowledge / specialist agent swarm |
 | `mcp-registry` | MCP discovery |
 | `Control_Chrome` / `Claude_in_Chrome` | Browser automation |
 | `Claude_Preview` | Preview built artifacts |
