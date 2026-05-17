@@ -1,6 +1,6 @@
 # Workflows
 
-Pre-baked workflows that combine multiple ADGENTS into one task pipeline. You don't have to call them this way — Claude Code will dispatch automatically — but these are useful as mental models.
+Pre-baked workflows that combine multiple Workhugs Adgents into one task pipeline. You don't have to call them this way — Claude Code will dispatch automatically — but these are useful as mental models.
 
 ## A) Full campaign — brief to launch
 

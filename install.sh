@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# ADGENTS installer — copies 14 marketing agency subagents into ~/.claude/agents/
+# Workhugs Adgents installer — copies 14 marketing agency subagents into ~/.claude/agents/
 # Usage: curl -fsSL https://raw.githubusercontent.com/FakeFlorist/adgents/main/install.sh | bash
 
 set -e
@@ -9,8 +9,8 @@ TARGET="$HOME/.claude/agents"
 TMPDIR=$(mktemp -d)
 
 echo ""
-echo "🅰️  ADGENTS installer"
-echo "===================="
+echo "🅰️  Workhugs Adgents installer"
+echo "=============================="
 echo ""
 
 # Check git
@@ -55,5 +55,5 @@ echo "  2. Type a marketing/advertising task in plain language"
 echo "  3. The right agent will be invoked automatically"
 echo ""
 echo "📖 Reference:    $TARGET/ADGENTS.md"
-echo "🌐 Project page: https://github.com/FakeFlorist/adgents"
+echo "🌐 Project page: https://github.com/FakeFlorist/adgents (Workhugs Adgents)"
 echo ""

@@ -1,6 +1,6 @@
-# Skills Used by ADGENTS
+# Skills Used by Workhugs Adgents
 
-ADGENTS work without any skills installed — each agent has methodology baked into its system prompt. But when **Skills** are available in `~/.claude/skills/`, agents invoke them for higher-quality, more methodologically grounded output.
+Workhugs Adgents work without any skills installed — each agent has methodology baked into its system prompt. But when **Skills** are available in `~/.claude/skills/`, agents invoke them for higher-quality, more methodologically grounded output.
 
 ## Mapping
 

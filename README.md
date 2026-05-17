@@ -1,8 +1,7 @@
-# 🅰️ ADGENTS
+# 🅰️ Workhugs Adgents
 
-> **Ads + Agents** — an open-source stack of 14 AI subagents that handle the work of an entire marketing & advertising agency, running inside [Claude Code](https://claude.com/code).
+> **Ads + Agents** — a stack of 14 AI subagents that handle the work of an entire marketing & advertising agency, running inside [Claude Code](https://claude.com/code).
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Claude Code](https://img.shields.io/badge/Claude%20Code-compatible-blueviolet)](https://claude.com/code)
 [![Languages](https://img.shields.io/badge/Languages-EN%20%2B%20SK-blue)]()
 [![Agents](https://img.shields.io/badge/Agents-14-orange)]()
@@ -11,7 +10,7 @@
 
 ## What is this?
 
-You install one folder. From that moment, when you type any marketing or advertising task into Claude Code — *"write 3 headlines for our new coffee brand"*, *"audit competitor ads for these 3 wine labels"*, *"plan a 10k€ Meta + Google budget for product launch"* — the system **automatically** routes the task to the right specialist agent.
+**Workhugs Adgents** is a drop-in folder that turns Claude Code into a full marketing & advertising agency. You install it once. From that moment, when you type any marketing or advertising task — *"write 3 headlines for our new coffee brand"*, *"audit competitor ads for these 3 wine labels"*, *"plan a 10k€ Meta + Google budget for product launch"* — the system **automatically** routes the task to the right specialist agent.
 
 No commands to remember. No prompt engineering. No agent names to type. Just describe what you need.
 
@@ -29,7 +28,7 @@ A skill is a **methodology**. An agent is a **specialist** who knows how to orch
 - Parallelism for free: `market-researcher` and `idea-maker` run simultaneously. You get a consolidated output in one pass, not five sequential prompts.
 - Bilingual EN + SK by default. Output is written natively in the target language, not translated.
 
-ADGENTS turns a pile of skills into a team.
+Workhugs Adgents turns a pile of skills into a team.
 
 ---
 
@@ -156,7 +155,7 @@ Edit any file → change takes effect in the next conversation.
 
 ## 🛠 Recommended Skills
 
-ADGENTS works on its own — every agent has methodology baked into its system prompt. But when **Skills** are installed in `~/.claude/skills/`, the relevant agents invoke them automatically for higher-quality output.
+Workhugs Adgents work on their own — every agent has methodology baked into its system prompt. But when **Skills** are installed in `~/.claude/skills/`, the relevant agents invoke them automatically for higher-quality output.
 
 | Skill | Used by | Why |
 |---|---|---|
@@ -167,7 +166,7 @@ ADGENTS works on its own — every agent has methodology baked into its system p
 | `content-research-writer` | content-creator, seo-content | Research + citations + hooks |
 | `competitive-ads-extractor` | market-researcher, media-buyer | Ad library analysis |
 
-Skills are out of scope for this repo — install separately. ADGENTS gracefully falls back to in-prompt principles if a skill isn't available.
+Skills are out of scope for this repo — install separately. Workhugs Adgents gracefully fall back to in-prompt principles if a skill isn't available.
 
 ---
 
@@ -233,4 +232,9 @@ Each file is plain markdown. Open, edit, save. Done.
 - **Consultants** who don't want to learn 14 different tools
 
 This isn't *"AI will replace people."* It's a team in one window.
+
+---
+
 **Built for agencies that ship.** Open Claude Code. Type what you need. Watch a team work.
+
+— *Workhugs*

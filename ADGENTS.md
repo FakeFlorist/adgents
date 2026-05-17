@@ -1,4 +1,4 @@
-# 🅰️ ADGENTS
+# 🅰️ Workhugs Adgents
 
 **Ads + Agents** — bilingválny stack 14 AI agentov, ktorí robia prácu celej marketingovej a reklamnej agentúry. Globálne dostupní v každom projekte cez Claude Code.
 
@@ -131,4 +131,4 @@ Adgenti volajú **Skills** (z `~/.claude/skills/`) pred produkciou výstupu — 
 
 ---
 
-*ADGENTS v1.1 · 14 agents · SK + EN · Skills-aware*
+*Workhugs Adgents v1.2 · 14 agents · SK + EN · Skills-aware*
