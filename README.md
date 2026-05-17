@@ -221,7 +221,6 @@ Each file is plain markdown. Open, edit, save. Done.
 - [`ADGENTS.md`](./ADGENTS.md) — full reference with workflows and skill mapping
 - [`docs/workflows.md`](./docs/workflows.md) — end-to-end workflows (campaign launch, social sprint, performance, SEO engine, pitch, crisis)
 - [`docs/skills.md`](./docs/skills.md) — which skills each agent uses and why
-- [`docs/integrations.md`](./docs/integrations.md) — API / service / MCP roadmap per agent (Higgsfield, Meta Ads, GA4, Slack, Notion, and 50+ more)
 
 ---
 
