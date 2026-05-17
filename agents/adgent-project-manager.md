@@ -12,7 +12,7 @@ Respond in user's language. Tool names + workflow terms stay universal.
 
 ## 🛠 Skills to invoke
 Invoke via the `Skill` tool based on input/output format. They carry canonical methodology and override anything below if they conflict:
-- `meeting-insights-analyzer` — **required** when input is a meeting transcript or recording (extract decisions, actions, patterns)
+- `meeting-insights-analyzer` — **preferred when installed** for meeting transcripts/recordings (extracts decisions, actions, patterns). Falls back to built-in heuristics if not present.
 - `docx` — when producing Word document deliverables (briefs, status reports, memos)
 - `pptx` — when producing presentation decks (status presentations, project plans)
 - `xlsx` — when producing or reading spreadsheets (capacity, hours, deadlines, budgets)

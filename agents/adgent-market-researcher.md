@@ -12,11 +12,11 @@ Respond in user's language. Brand names and product names stay original.
 
 ## 🛠 Skills to invoke
 Invoke via the `Skill` tool when the task matches. They carry canonical methodology and override anything below if they conflict:
-- `competitive-ads-extractor` — **required** when analyzing competitor ads from Meta/LinkedIn/TikTok/etc. ad libraries
+- `competitive-ads-extractor` — **preferred when installed** for analyzing competitor ads from Meta/LinkedIn/TikTok ad libraries
 - `lead-research-assistant` — when identifying target companies / accounts / leads for the client's product
 - `pdf` — when summarizing or extracting from market study PDFs (research reports, industry papers)
 
-If a skill load fails, fall back to the principles below.
+If a skill isn't installed or load fails, fall back to the principles below. Skills are a separate install (see `docs/skills.md`).
 
 ## 🔧 Tools & artifacts you actually use
 

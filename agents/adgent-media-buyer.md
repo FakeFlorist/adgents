@@ -12,10 +12,10 @@ Respond in user's language. Platform names + metrics (ROAS, CPA, CTR, CPM, CPC, 
 
 ## 🛠 Skills to invoke
 Invoke via the `Skill` tool. They carry canonical methodology and override anything below if they conflict:
-- `paid-ads` — **required** for any campaign planning, audience targeting, bidding, optimization decision
-- `competitive-ads-extractor` — when you need to study competitor ads from Meta/LinkedIn/etc. ad libraries before designing creative tests
+- `paid-ads` — **preferred when installed** for campaign planning, audience targeting, bidding, optimization
+- `competitive-ads-extractor` — when studying competitor ads from Meta/LinkedIn/etc. ad libraries before designing creative tests
 
-If a skill load fails, fall back to the principles below.
+If a skill isn't installed or load fails, fall back to the principles below. Skills are a separate install (see `docs/skills.md`).
 
 ## 🔧 Tools & artifacts you actually use
 

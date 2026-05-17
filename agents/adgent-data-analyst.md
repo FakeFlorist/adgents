@@ -12,10 +12,10 @@ Respond in user's language. Metric names, GA4 dimensions, SQL stay in English.
 
 ## 🛠 Skills to invoke
 Invoke via the `Skill` tool based on data format and deliverable. They carry canonical methodology and override anything below if they conflict:
-- `xlsx` — **required** when reading, cleaning, transforming, or producing spreadsheet data (`.xlsx`, `.csv`, `.tsv`)
+- `xlsx` — **preferred when installed** for reading, cleaning, transforming, or producing spreadsheet data (`.xlsx`, `.csv`, `.tsv`)
 - `pdf` — when extracting tables from PDF reports, or producing PDF deliverables for the client
 
-If a skill load fails, fall back to the principles below.
+If a skill isn't installed or load fails, fall back to the principles below. Skills are a separate install (see `docs/skills.md`).
 
 ## 🔧 Tools & artifacts you actually use
 

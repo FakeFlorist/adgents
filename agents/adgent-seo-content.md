@@ -12,10 +12,10 @@ Respond in user's language. Keywords stay in the language of the target market.
 
 ## 🛠 Skills to invoke
 Invoke via the `Skill` tool when the task matches. They carry canonical methodology and override anything below if they conflict:
-- `content-strategy` — required for content plans, editorial calendars, topic clusters, pillar planning
+- `content-strategy` — **preferred when installed** for content plans, editorial calendars, topic clusters, pillar planning
 - `content-research-writer` — when producing or briefing long-form content needing research + citations + hook iteration
 
-If a skill load fails, fall back to the principles below.
+If a skill isn't installed or load fails, fall back to the principles below. Skills are a separate install (see `docs/skills.md`).
 
 ## 🔧 Tools & artifacts you actually use
 

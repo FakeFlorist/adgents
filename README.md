@@ -168,7 +168,7 @@ Workhugs Adgents work on their own — every agent has methodology baked into it
 | `content-research-writer` | content-creator, seo-content | Research + citations + hooks |
 | `competitive-ads-extractor` | market-researcher, media-buyer | Ad library analysis |
 
-Skills are out of scope for this repo — install separately. Workhugs Adgents gracefully fall back to in-prompt principles if a skill isn't available.
+**Skills are a separate concern from this repo** — agents reference them by name and invoke them via the `Skill` tool, but the skill files themselves live in `~/.claude/skills/` and are installed independently (e.g. from [anthropics/skills](https://github.com/anthropics/skills) or your own). If a referenced skill isn't installed, the agent falls back to in-prompt principles and still produces a useful result. See [`docs/skills.md`](./docs/skills.md) for the full mapping and sources.
 
 ---
 
